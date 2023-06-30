@@ -1,15 +1,17 @@
-1. **Scrapy**: All the files share the Scrapy library as a dependency. Scrapy is used for creating the web scraper.
+1. "ScraperItem" Class: This class is defined in "items.py" and is used in "reddit_spider.py" for defining the data structure of the scraped data. It was previously named "RedditScraperItem".
 
-2. **ScraperItem**: This class is defined in 'items.py' and is used in 'reddit_spider.py' and 'pipelines.py'. It represents the data structure for storing the scraped data.
+2. Scrapy Libraries: Libraries such as scrapy.Spider, scrapy.Request, and scrapy.Selector are used across "reddit_spider.py" for web scraping functionalities.
 
-3. **JSON**: The scraped data is stored in a JSON format. This is used in 'pipelines.py' for storing the data and in 'reddit_spider.py' for parsing the data.
+3. JSON Exporter: The JSON exporter is used in "pipelines.py" to export the scraped data in a structured JSON format. It is configured in "settings.py".
 
-4. **reddit_spider.py**: This file contains the main scraping logic and uses the 'ScraperItem' class from 'items.py' and the Scrapy settings from 'settings.py'.
+4. Settings: The settings for the Scrapy project are defined in "settings.py" and are used across all other files for configuring the behavior of the Scrapy spider, pipelines, and item exporters.
 
-5. **pipelines.py**: This file uses the 'ScraperItem' class from 'items.py' and the Scrapy settings from 'settings.py'. It handles the storage of the scraped data.
+5. Setup Configuration: The setup configuration defined in "setup.py" is used for package dependencies and is shared with "scrapy.cfg".
 
-6. **settings.py**: This file contains the settings for the Scrapy spider. It is used in 'reddit_spider.py' and 'pipelines.py'.
+6. Scrapy Configuration: The Scrapy configuration defined in "scrapy.cfg" is used to define the settings module and the project directory. It is shared with all other files in the project.
 
-7. **Pagination and Dynamic Content Handling**: This feature is implemented in 'reddit_spider.py' and relies on the Scrapy settings from 'settings.py'.
+7. Reddit URLs: The Reddit URLs to be scraped are defined in "reddit_spider.py" and are used for sending HTTP requests.
 
-8. **Reddit Data**: The specific data to be scraped from Reddit is defined in 'reddit_spider.py' and is structured in the 'ScraperItem' class in 'items.py'.
+8. Pagination Handling: The logic for handling pagination is defined in "reddit_spider.py" and is used for navigating through different pages on Reddit.
+
+9. Dynamic Content Handling: The logic for handling dynamic content is defined in "reddit_spider.py" and is used for scraping data from dynamic web pages.

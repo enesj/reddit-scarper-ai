@@ -2,7 +2,7 @@
 import json
 from scrapy.exporters import JsonItemExporter
 
-class RedditScraperPipeline(object):
+class JsonPipeline(object):
     def __init__(self):
         self.file = open("reddit_data.json", 'wb')
         self.exporter = JsonItemExporter(self.file, encoding='utf-8', ensure_ascii=False)

@@ -3,7 +3,7 @@ import scrapy
 from reddit_scraper.items import ScraperItem
 
 class RedditSpider(scrapy.Spider):
-    name = "reddit"
+    name = 'reddit_spider'
     start_urls = ['http://www.reddit.com']
 
     def parse(self, response):
