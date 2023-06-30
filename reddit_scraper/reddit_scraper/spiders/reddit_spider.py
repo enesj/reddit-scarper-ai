@@ -1,18 +1,17 @@
 ```python
 import scrapy
-from web_scraper.items import RedditScraperItem
+from reddit_scraper.items import ScraperItem
 
 class RedditSpider(scrapy.Spider):
     name = "reddit"
-    start_urls = ['https://www.reddit.com']
+    start_urls = ['http://www.reddit.com']
 
     def parse(self, response):
         for post in response.css('div.thing'):
-            item = RedditScraperItem()
+            item = ScraperItem()
             item['title'] = post.css('p.title a::text').get()
             item['url'] = post.css('p.title a::attr(href)').get()
             item['upvotes'] = post.css('div.score.unvoted::attr(title)').get()
-            item['author'] = post.css('a.author::text').get()
             yield item
 
         next_page = response.css('span.next-button a::attr(href)').get()
