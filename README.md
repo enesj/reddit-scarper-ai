@@ -1,1 +1,0 @@
-# reddit-scarper-ai
